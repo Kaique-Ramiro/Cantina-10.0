@@ -56,5 +56,15 @@ namespace CANTINA_10._0
                 textBox_Senha.ForeColor = Color.Gray;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

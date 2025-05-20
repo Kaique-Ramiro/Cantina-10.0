@@ -12,6 +12,8 @@ namespace CANTINA_10._0
 {
     public partial class Form2 : Form
     {
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public DateTime Horariopedido { get; private set; } = DateTime.Now;
         public Form2()
         {
             InitializeComponent();
@@ -139,7 +141,9 @@ namespace CANTINA_10._0
                 return;
             }
 
-            string mensagem = "Você realizou os seguintes pedidos:\n\n";
+            string nomeCliente = textBox1.Text;
+            string mensagem = $"{Horariopedido}";
+            mensagem += $"\n {nomeCliente} realizou os seguintes pedidos:\n\n";
 
             foreach (var item in Carrinho.Items)
             {
@@ -150,7 +154,7 @@ namespace CANTINA_10._0
             DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                string nomeCliente = textBox1.Text;
+                
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 Carrinho.Items.Clear();
@@ -169,6 +173,12 @@ namespace CANTINA_10._0
                     MessageBox.Show("Os itens continuarão no pedido.", "Itens mantidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Carrinho.Items.Clear();
+            label3.Text = "R$ 0, 00";
         }
     }
 }

@@ -39,6 +39,8 @@
             button3 = new Button();
             label4 = new Label();
             textBox1 = new TextBox();
+            button4 = new Button();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -108,11 +110,11 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(230, 255, 0);
-            button1.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(17, 12, 25);
             button1.Location = new Point(608, 395);
             button1.Name = "button1";
-            button1.Size = new Size(109, 45);
+            button1.Size = new Size(121, 45);
             button1.TabIndex = 6;
             button1.Text = "ADICIONAR";
             button1.UseVisualStyleBackColor = false;
@@ -121,11 +123,11 @@
             // button2
             // 
             button2.BackColor = Color.FromArgb(230, 255, 0);
-            button2.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(17, 12, 25);
-            button2.Location = new Point(597, 446);
+            button2.Location = new Point(599, 446);
             button2.Name = "button2";
-            button2.Size = new Size(132, 45);
+            button2.Size = new Size(138, 45);
             button2.TabIndex = 7;
             button2.Text = "REMOVER";
             button2.UseVisualStyleBackColor = false;
@@ -134,9 +136,9 @@
             // button3
             // 
             button3.BackColor = Color.FromArgb(230, 255, 0);
-            button3.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.FromArgb(17, 12, 25);
-            button3.Location = new Point(581, 497);
+            button3.Location = new Point(585, 498);
             button3.Name = "button3";
             button3.Size = new Size(166, 45);
             button3.TabIndex = 8;
@@ -162,11 +164,35 @@
             textBox1.Size = new Size(222, 26);
             textBox1.TabIndex = 10;
             // 
+            // button4
+            // 
+            button4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button4.Location = new Point(837, 77);
+            button4.Name = "button4";
+            button4.Size = new Size(44, 35);
+            button4.TabIndex = 11;
+            button4.Text = "🗑️";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.Location = new Point(740, 372);
+            label5.Name = "label5";
+            label5.Size = new Size(91, 27);
+            label5.TabIndex = 12;
+            label5.Text = "R$ 0, 00";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(882, 573);
+            BackColor = Color.FromArgb(202, 196, 183);
+            ClientSize = new Size(890, 573);
+            Controls.Add(label5);
+            Controls.Add(button4);
             Controls.Add(textBox1);
             Controls.Add(label4);
             Controls.Add(button3);
@@ -200,5 +226,7 @@
         private Button button3;
         private Label label4;
         private TextBox textBox1;
+        private Button button4;
+        private Label label5;
     }
 }

@@ -17,3 +17,4 @@ C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\C
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Properties.Resources.resources
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA 10.0.sourcelink.json
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form2.resources
+C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form3.resources

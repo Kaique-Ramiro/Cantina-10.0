@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|c:\\users\\25163384\\documents\\cantina 10.0\\cantina 10.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1E6AA6DB-2BF0-4E09-968F-B7DEA1C07144}|CANTINA 10.0.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,24 +38,49 @@
       "DocumentGroups": [
         {
           "DockedHeight": 143,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form3.cs",
+              "RelativeDocumentMoniker": "Form3.cs",
+              "ToolTip": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form3.cs",
+              "RelativeToolTip": "Form3.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwC8AAAB+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:56:18.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Form3.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form3.cs",
+              "RelativeDocumentMoniker": "Form3.cs",
+              "ToolTip": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form3.cs [Projeto]",
+              "RelativeToolTip": "Form3.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-20T13:20:39.175Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
               "ToolTip": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form2.cs",
               "RelativeToolTip": "Form2.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAADwv6oAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-19T11:41:53.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form2.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form2.cs",
               "RelativeDocumentMoniker": "Form2.cs",
@@ -59,7 +92,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Class1.cs",
               "RelativeDocumentMoniker": "Class1.cs",
@@ -72,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -85,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\25163384\\Documents\\CANTINA 10.0\\CANTINA 10.0\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",

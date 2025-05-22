@@ -28,16 +28,17 @@ namespace CANTINA_10._0
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            Cardapio.Items.Clear();
             Cardapio.Items.Add(new Cardapio("Pão de queijo", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Coxinha", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer simples", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer com queijo", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("X-Tudo", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 3.50, 0));
+            Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0));
+            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0));
+            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0));
+            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0));
+            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer simples", 8.00, 0));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer com queijo", 9.00, 0));
+            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0));
+            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace CANTINA_10._0
                 {
                     somaTotal += item.Preco;
                 }
-                label3.Text = "R$" + somaTotal.ToString("F2");
+                label5.Text = "R$" + somaTotal.ToString("F2");
             }
             else
             {
@@ -115,11 +116,11 @@ namespace CANTINA_10._0
                 }
                 if (somaTotal == 0)
                 {
-                    label3.Text = "R$ 0,00";
+                    label5.Text = "R$ 0,00";
                 }
                 else
                 {
-                    label3.Text = "R$" + somaTotal.ToString("F2");
+                    label5.Text = "R$" + somaTotal.ToString("F2");
                 }
             }
             else
@@ -140,6 +141,18 @@ namespace CANTINA_10._0
                 MessageBox.Show("Nenhum pedido foi realizado no momento.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                MessageBox.Show("Por favor insira seu nome", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            Form3 form3 = new Form3();
+            form3.TotalPedido = somaFinal;
+            if (form3.ShowDialog() == DialogResult.OK)
+            {
+                string forma = form3.FormaSelecionada;
+                MessageBox.Show("Forma de Pagamento: " + forma);
+            }
 
             string nomeCliente = textBox1.Text;
             string mensagem = $"{Horariopedido}";
@@ -150,35 +163,39 @@ namespace CANTINA_10._0
                 mensagem += "-" + item.ToString() + "\n";
             }
             mensagem += $"\nTotal: R$ {somaFinal:F2}";
+            mensagem += "\nTroco: R$ " + (form3.Troco).ToString("F2");
             mensagem += "\n\nEstes pedidos estão corretos?";
             DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
             if (resultado == DialogResult.Yes)
             {
-                
+
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                textBox1.Clear();
                 Carrinho.Items.Clear();
-                label3.Text = "R$ 0,00";
+                label5.Text = "R$ 0,00";
             }
             else
             {
                 DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo);
                 if (resultado2 == DialogResult.Yes)
                 {
+                    textBox1.Clear();
                     Carrinho.Items.Clear();
-                    label3.Text = "R$ 0,00";
+                    label5.Text = "R$ 0,00";
                 }
                 else
                 {
                     MessageBox.Show("Os itens continuarão no pedido.", "Itens mantidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
+        }    
 
         private void button4_Click(object sender, EventArgs e)
         {
             Carrinho.Items.Clear();
-            label3.Text = "R$ 0, 00";
+            label5.Text = "R$ 0, 00";
         }
     }
 }

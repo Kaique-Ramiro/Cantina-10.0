@@ -79,7 +79,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(17, 25, 12);
-            label2.Location = new Point(516, 52);
+            label2.Location = new Point(521, 52);
             label2.Name = "label2";
             label2.Size = new Size(90, 22);
             label2.TabIndex = 3;

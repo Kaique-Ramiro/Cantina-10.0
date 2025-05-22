@@ -12,6 +12,7 @@ namespace CANTINA_10._0
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form2());
+            
         }
     }
 }

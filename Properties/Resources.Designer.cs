@@ -103,9 +103,29 @@ namespace CANTINA_10._0.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_14_5_2025_8435_1 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela_14-5-2025_8435_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_tela_2025_05_13_105519 {
             get {
                 object obj = ResourceManager.GetObject("Captura de tela 2025-05-13 105519", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_tela_2025_05_23_083840 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de tela 2025-05-23 083840", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

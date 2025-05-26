@@ -19,3 +19,24 @@ C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\bin\Debug\net9.0-windows\C
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA 10.0.genruntimeconfig.cache
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\ref\CANTINA 10.0.dll
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form4.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form1.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form2.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form3.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form4.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Properties.Resources.resources
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.csproj.GenerateResource.cache
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.AssemblyInfoInputs.cache
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.AssemblyInfo.cs
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.csproj.CoreCompileInputs.cache
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.sourcelink.json
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.dll
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\refint\CANTINA 10.0.dll
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.pdb
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\bin\Debug\net9.0-windows\CANTINA 10.0.exe
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\bin\Debug\net9.0-windows\CANTINA 10.0.deps.json
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\bin\Debug\net9.0-windows\CANTINA 10.0.runtimeconfig.json
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\bin\Debug\net9.0-windows\CANTINA 10.0.dll
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\bin\Debug\net9.0-windows\CANTINA 10.0.pdb
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.genruntimeconfig.cache
+C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\ref\CANTINA 10.0.dll

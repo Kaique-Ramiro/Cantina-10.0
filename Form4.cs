@@ -27,16 +27,16 @@ namespace CANTINA_10._0
 
                 foreach (var item in pedido.Itens)
                 {
-                    Pedidos.Itens.Add($" {item.Nome} - Quantidade: {item.Quantidade}");
+                    Pedidos.Items.Add($" {item.Nome} - Quantidade: {item.Quantidade}");
                 }
 
-                Pedidos.Itens.Add("");
+                Pedidos.Items.Add("");
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Pedidos atualizados com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

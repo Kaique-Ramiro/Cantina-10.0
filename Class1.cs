@@ -11,6 +11,7 @@ namespace CANTINA_10._0
         public string Nome { get; set; }
         public double Preco {  get; set; }
         public int Quantidade { get; set; } = 0;
+        public bool Chapa { get; set; }
         public Cardapio(string nome, double preco, int quantidade)
         {
             Nome = nome;

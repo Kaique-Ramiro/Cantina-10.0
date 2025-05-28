@@ -13,5 +13,10 @@ namespace CANTINA_10._0
         public List<Cardapio> Itens { get; set; }
         public int Quantidade {  get; set; }
         public DateTime DataHora { get; set; }
+        public string Status { get; set; } = "";
+        public override string ToString()
+        {
+            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora}";
+        }
     }
 }

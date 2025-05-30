@@ -42,5 +42,10 @@ namespace CANTINA_10._0
             form2.Show();
             this.Hide();
         }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

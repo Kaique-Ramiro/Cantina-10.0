@@ -151,6 +151,7 @@ namespace CANTINA_10._0
             if (form3.ShowDialog() == DialogResult.OK)
             {
                 string forma = form3.FormaSelecionada;
+                string Entrega = form3.Entrega;
                 MessageBox.Show("Forma de Pagamento: " + forma);
             }
 
@@ -190,12 +191,19 @@ namespace CANTINA_10._0
                     MessageBox.Show("Os itens continuarão no pedido.", "Itens mantidos", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }    
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
             Carrinho.Items.Clear();
             label5.Text = "R$ 0, 00";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Hide();
         }
     }
 }

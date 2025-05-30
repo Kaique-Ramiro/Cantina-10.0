@@ -41,25 +41,26 @@
             textBox1 = new TextBox();
             button4 = new Button();
             label5 = new Label();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Cardapio
             // 
-            Cardapio.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Cardapio.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Cardapio.FormattingEnabled = true;
             Cardapio.Location = new Point(41, 116);
             Cardapio.Name = "Cardapio";
-            Cardapio.Size = new Size(397, 346);
+            Cardapio.Size = new Size(407, 326);
             Cardapio.TabIndex = 0;
             // 
             // Carrinho
             // 
-            Carrinho.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Carrinho.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Carrinho.FormattingEnabled = true;
             Carrinho.Location = new Point(489, 77);
             Carrinho.Name = "Carrinho";
-            Carrinho.Size = new Size(342, 292);
+            Carrinho.Size = new Size(342, 280);
             Carrinho.TabIndex = 1;
             Carrinho.SelectedIndexChanged += listBox2_SelectedIndexChanged;
             // 
@@ -150,7 +151,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(202, 482);
+            label4.Location = new Point(206, 469);
             label4.Name = "label4";
             label4.Size = new Size(61, 22);
             label4.TabIndex = 9;
@@ -159,7 +160,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(127, 507);
+            textBox1.Location = new Point(129, 494);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(222, 26);
             textBox1.TabIndex = 10;
@@ -185,12 +186,24 @@
             label5.TabIndex = 12;
             label5.Text = "R$ 0, 00";
             // 
+            // button5
+            // 
+            button5.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button5.Location = new Point(12, 533);
+            button5.Name = "button5";
+            button5.Size = new Size(59, 28);
+            button5.TabIndex = 13;
+            button5.Text = "↩️";
+            button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(890, 573);
+            Controls.Add(button5);
             Controls.Add(label5);
             Controls.Add(button4);
             Controls.Add(textBox1);
@@ -228,5 +241,6 @@
         private TextBox textBox1;
         private Button button4;
         private Label label5;
+        private Button button5;
     }
 }

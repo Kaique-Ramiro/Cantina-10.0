@@ -30,7 +30,8 @@ namespace CANTINA_10._0
         }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string FormaSelecionada { get; private set; }
-
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public string Entrega { get; private set; }
         private void button1_Click(object sender, EventArgs e)
         {
             if (Dinheiro.Checked)
@@ -47,9 +48,9 @@ namespace CANTINA_10._0
                 return;
             }
             if (Consumo.Checked)
-                FormaSelecionada += " - Consumo na Loja";
+               Entrega = " - Consumo na Loja";
             else if (Viagem.Checked)
-                FormaSelecionada += " - Para Viagem";
+               Entrega = " - Para Viagem";
             this.DialogResult = DialogResult.OK;
             this.Close();
             if (FormaSelecionada == "Dinheiro - Para Viagem")

@@ -49,7 +49,7 @@
             label1.BackColor = Color.FromArgb(17, 25, 12);
             label1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(243, 241, 238);
-            label1.Location = new Point(30, 33);
+            label1.Location = new Point(30, 42);
             label1.Name = "label1";
             label1.Size = new Size(247, 30);
             label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             label2.BackColor = Color.FromArgb(17, 25, 12);
             label2.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(243, 241, 238);
-            label2.Location = new Point(386, 33);
+            label2.Location = new Point(6, 42);
             label2.Name = "label2";
             label2.Size = new Size(191, 30);
             label2.TabIndex = 1;
@@ -72,7 +72,7 @@
             Consumo.AutoSize = true;
             Consumo.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Consumo.ForeColor = Color.FromArgb(230, 255, 0);
-            Consumo.Location = new Point(0, 69);
+            Consumo.Location = new Point(7, 165);
             Consumo.Name = "Consumo";
             Consumo.Size = new Size(258, 31);
             Consumo.TabIndex = 6;
@@ -85,7 +85,7 @@
             Viagem.AutoSize = true;
             Viagem.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Viagem.ForeColor = Color.FromArgb(230, 255, 0);
-            Viagem.Location = new Point(0, 6);
+            Viagem.Location = new Point(7, 96);
             Viagem.Name = "Viagem";
             Viagem.Size = new Size(136, 31);
             Viagem.TabIndex = 7;
@@ -98,7 +98,7 @@
             button1.BackColor = Color.FromArgb(17, 25, 12);
             button1.Font = new Font("Inter SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(230, 255, 0);
-            button1.Location = new Point(308, 368);
+            button1.Location = new Point(188, 388);
             button1.Name = "button1";
             button1.Size = new Size(214, 48);
             button1.TabIndex = 8;
@@ -111,7 +111,7 @@
             Dinheiro.AutoSize = true;
             Dinheiro.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Dinheiro.ForeColor = Color.FromArgb(230, 255, 0);
-            Dinheiro.Location = new Point(0, 132);
+            Dinheiro.Location = new Point(30, 228);
             Dinheiro.Name = "Dinheiro";
             Dinheiro.Size = new Size(109, 31);
             Dinheiro.TabIndex = 5;
@@ -124,20 +124,21 @@
             Crédito.AutoSize = true;
             Crédito.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Crédito.ForeColor = Color.FromArgb(230, 255, 0);
-            Crédito.Location = new Point(0, 75);
+            Crédito.Location = new Point(30, 165);
             Crédito.Name = "Crédito";
             Crédito.Size = new Size(195, 31);
             Crédito.TabIndex = 3;
             Crédito.TabStop = true;
             Crédito.Text = "Cartão de Crédito";
             Crédito.UseVisualStyleBackColor = true;
+            Crédito.CheckedChanged += Crédito_CheckedChanged;
             // 
             // Débito
             // 
             Débito.AutoSize = true;
             Débito.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Débito.ForeColor = Color.FromArgb(230, 255, 0);
-            Débito.Location = new Point(2, 12);
+            Débito.Location = new Point(30, 96);
             Débito.Name = "Débito";
             Débito.Size = new Size(187, 31);
             Débito.TabIndex = 2;
@@ -150,7 +151,7 @@
             Pix.AutoSize = true;
             Pix.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pix.ForeColor = Color.FromArgb(230, 255, 0);
-            Pix.Location = new Point(0, 185);
+            Pix.Location = new Point(30, 286);
             Pix.Name = "Pix";
             Pix.Size = new Size(58, 31);
             Pix.TabIndex = 4;
@@ -163,21 +164,24 @@
             groupBox1.Controls.Add(Pix);
             groupBox1.Controls.Add(Débito);
             groupBox1.Controls.Add(Crédito);
+            groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(Dinheiro);
-            groupBox1.Location = new Point(30, 81);
+            groupBox1.Location = new Point(0, -9);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(350, 291);
+            groupBox1.Size = new Size(386, 465);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(button1);
             groupBox2.Controls.Add(Viagem);
+            groupBox2.Controls.Add(label2);
             groupBox2.Controls.Add(Consumo);
-            groupBox2.Location = new Point(386, 87);
+            groupBox2.Location = new Point(386, -9);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(415, 285);
+            groupBox2.Size = new Size(415, 465);
             groupBox2.TabIndex = 10;
             groupBox2.TabStop = false;
             groupBox2.Text = "groupBox2";
@@ -190,9 +194,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Name = "Form3";
             Text = "Form3";
             groupBox1.ResumeLayout(false);
@@ -200,7 +201,6 @@
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

@@ -14,9 +14,9 @@ namespace CANTINA_10._0
     public partial class Form3 : Form
     {
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public List<string> OpcoesSelecionadas {  get; private set; } = new List<string>();
+        public List<string> OpcoesSelecionadas { get; private set; } = new List<string>();
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string TipoPedido {  get; private set; }
+        public string TipoPedido { get; private set; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public double Troco { get; private set; }
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -48,31 +48,12 @@ namespace CANTINA_10._0
                 return;
             }
             if (Consumo.Checked)
-               Entrega = " - Consumo na Loja";
+                Entrega = " - Consumo na Loja";
             else if (Viagem.Checked)
-               Entrega = " - Para Viagem";
+                Entrega = " - Para Viagem";
             this.DialogResult = DialogResult.OK;
             this.Close();
-            if (FormaSelecionada == "Dinheiro - Para Viagem")
-            {
-                while (true)
-                {
-                    string valorStr = Microsoft.VisualBasic.Interaction.InputBox("Digite o Valor Recebido:", "Dinheiro", "0");
-                    if (double .TryParse(valorStr, out double valorRecebido))
-                    {
-                        if (valorRecebido >= TotalPedido)
-                        {
-                            Troco = valorRecebido - TotalPedido;
-                            break;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Valor Inválido. Por favor, Insira Novamente.");
-                    }
-                }
-            }
-            else if (FormaSelecionada == "Dinheiro - Consumo na Loja")
+            if (FormaSelecionada == "Dinheiro")
             {
                 while (true)
                 {
@@ -91,6 +72,10 @@ namespace CANTINA_10._0
                     }
                 }
             }
+        }
+        private void Crédito_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

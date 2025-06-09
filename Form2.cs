@@ -29,16 +29,16 @@ namespace CANTINA_10._0
         private void Form2_Load(object sender, EventArgs e)
         {
             Cardapio.Items.Clear();
-            Cardapio.Items.Add(new Cardapio("Pão de queijo", 3.50, 0));
-            Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0));
-            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0));
-            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0));
-            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0));
-            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer simples", 8.00, 0));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer com queijo", 9.00, 0));
-            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0));
-            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0));
+            Cardapio.Items.Add(new Cardapio("Pão de queijo", 3.50, 0, false));
+            Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0, false));
+            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0, true));
+            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0, true));
+            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0, false));
+            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0, false));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer simples", 8.00, 0, true));
+            Cardapio.Items.Add(new Cardapio("Hambúrguer com queijo", 9.00, 0, true));
+            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0, true));
+            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0, false));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace CANTINA_10._0
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Carrinho.Items.Add(novoItem);
                 }
 
@@ -173,8 +173,26 @@ namespace CANTINA_10._0
 
                 MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                Pedido novoPedido = new Pedido(form3.Entrega)
+                {
+                    Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
+                    NomeCliente = textBox1.Text,
+                    Itens = Carrinho.Items.Cast<Cardapio>()
+                    .Select(item => new Cardapio(item.Nome, item.Preco, item.Quantidade, item.Chapa))
+                    .ToList(),
+                    DataHora = DateTime.Now,
+                    Tipo = form3.Entrega,
+                };
+                PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
+                if (!novoPedido.Itens.Any(item => item.Chapa))
+                {
+                    novoPedido.Status = "- Finalizado";
+                    HistoricoGlobal.HistoricoPedidos.Add(novoPedido);
+                }
+                
                 textBox1.Clear();
                 Carrinho.Items.Clear();
+                somaFinal = 0;
                 label5.Text = "R$ 0,00";
             }
             else

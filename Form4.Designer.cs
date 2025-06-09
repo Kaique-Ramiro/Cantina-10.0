@@ -45,20 +45,21 @@
             // 
             // Pedidos
             // 
+            Pedidos.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pedidos.FormattingEnabled = true;
             Pedidos.Location = new Point(32, 101);
             Pedidos.Name = "Pedidos";
-            Pedidos.Size = new Size(298, 334);
+            Pedidos.Size = new Size(316, 334);
             Pedidos.TabIndex = 0;
             Pedidos.SelectedIndexChanged += Pedidos_SelectedIndexChanged;
             // 
             // Preparando
             // 
-            Preparando.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Preparando.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Preparando.FormattingEnabled = true;
             Preparando.Location = new Point(447, 101);
             Preparando.Name = "Preparando";
-            Preparando.Size = new Size(355, 184);
+            Preparando.Size = new Size(355, 180);
             Preparando.TabIndex = 1;
             Preparando.SelectedIndexChanged += Preparando_SelectedIndexChanged;
             // 
@@ -66,7 +67,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(118, 75);
+            label1.Location = new Point(134, 75);
             label1.Name = "label1";
             label1.Size = new Size(99, 23);
             label1.TabIndex = 2;
@@ -140,11 +141,11 @@
             // 
             // Historico
             // 
-            Historico.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Historico.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Historico.FormattingEnabled = true;
             Historico.Location = new Point(447, 338);
             Historico.Name = "Historico";
-            Historico.Size = new Size(355, 94);
+            Historico.Size = new Size(355, 92);
             Historico.TabIndex = 9;
             // 
             // label3

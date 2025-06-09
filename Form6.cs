@@ -30,6 +30,7 @@ namespace CANTINA_10._0
             if(PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
             {
                DialogResult resultado = MessageBox.Show("Este pedido está pronto para ser entregue?", "Entrega", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
                 if (resultado == DialogResult.Yes)
                 {
                     pedidoSelecionado.Status = "- Entregue";
@@ -46,12 +47,12 @@ namespace CANTINA_10._0
         private void Form6_Load(object sender, EventArgs e)
         {
             PedidosBalcao.Items.Clear();
-            foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
+            if (PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
             {
-                if (pedido.Status == "-Finalizado")
+                foreach (Cardapio item in pedidoSelecionado.Itens)
                 {
-                    PedidosBalcao.Items.Add(pedido);
-                }              
+                    ComandaBalcao.Items.Add($"{item.Nome} - Quantidade: {item.Quantidade} - {pedidoSelecionado.Tipo}");
+                }
             }
         }
 

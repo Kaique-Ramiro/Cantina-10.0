@@ -128,6 +128,7 @@
             Controls.Add(button1);
             Controls.Add(pictureBox2);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

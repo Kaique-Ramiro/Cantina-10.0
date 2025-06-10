@@ -12,6 +12,8 @@ namespace CANTINA_10._0
 {
     public partial class Form2 : Form
     {
+        private object item;
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public DateTime Horariopedido { get; private set; } = DateTime.Now;
         public Form2()
@@ -25,33 +27,64 @@ namespace CANTINA_10._0
         {
 
         }
+        private void AtualizarCardapioListBox()
+        {
+            int selectedIndex = Cardapio.SelectedIndex;
+
+
+            Cardapio.BeginUpdate();
+            Cardapio.Items.Clear();
+            foreach(var item in Estoque.Itens)
+            {
+                Cardapio.Items.Add(item);
+            }
+            Cardapio.EndUpdate();
+
+            if (selectedIndex >= 0 && selectedIndex < Cardapio.Items.Count) 
+                Cardapio.SelectedIndex = selectedIndex;
+        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if (Estoque.Itens.Count == 0)
+            {
+                Estoque.Itens.Add(new Cardapio("Pão de queijo", 3.50, 20, false));
+                Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 20, false));
+                Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 20, true));
+                Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 20, true));
+                Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 20, false));
+                Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 20, false));
+                Estoque.Itens.Add(new Cardapio("Hambúrguer simples", 8.00, 20, true));
+                Estoque.Itens.Add(new Cardapio("Hambúrguer com queijo", 9.00, 20, true));
+                Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 20, true));
+                Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 20, false));
+            }
             Cardapio.Items.Clear();
-            Cardapio.Items.Add(new Cardapio("Pão de queijo", 3.50, 0, false));
-            Cardapio.Items.Add(new Cardapio("Coxinha", 5.00, 0, false));
-            Cardapio.Items.Add(new Cardapio("Pastel de Carne", 6.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("Pastel de Queijo", 5.50, 0, true));
-            Cardapio.Items.Add(new Cardapio("Suco Natural (300ml)", 4.00, 0, false));
-            Cardapio.Items.Add(new Cardapio("Refrigerante Lata", 4.50, 0, false));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer simples", 8.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("Hambúrguer com queijo", 9.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("X-Tudo", 12.00, 0, true));
-            Cardapio.Items.Add(new Cardapio("Água Mineral (500ml)", 2.50, 0, false));
-        }
+            foreach(var item in Estoque.Itens)
+            {
+                Cardapio.Items.Add(item);
+            }
+        } 
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (Cardapio.SelectedItem is Cardapio produtoSelecionado)
             {
+                if (produtoSelecionado.Quantidade <= 5)
+                {
+                    MessageBox.Show("Estoque insuficiente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if (produtoSelecionado.Quantidade <= 5)
+                {
+                    MessageBox.Show("Estoque baixo! Apenas " + produtoSelecionado.Quantidade + "unidades restantes");
+                }
                 bool encontrado = false;
                 foreach (Cardapio item in Carrinho.Items)
                 {
                     if (item.Nome == produtoSelecionado.Nome)
                     {
                         item.Quantidade++;
-                        item.Preco += produtoSelecionado.Preco;
                         encontrado = true;
 
                         int index = Carrinho.Items.IndexOf(item);
@@ -67,10 +100,14 @@ namespace CANTINA_10._0
                     Carrinho.Items.Add(novoItem);
                 }
 
+                produtoSelecionado.Quantidade--;
+                AtualizarCardapioListBox();
+                Cardapio.Focus();
+
                 double somaTotal = 0;
                 foreach (Cardapio item in Carrinho.Items)
                 {
-                    somaTotal += item.Preco;
+                    somaTotal += item.Preco * item.Quantidade;
                 }
                 label5.Text = "R$" + somaTotal.ToString("F2");
             }
@@ -82,19 +119,22 @@ namespace CANTINA_10._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (Cardapio.SelectedItem is Cardapio produtoSelecionado)
+            if (Carrinho.SelectedItem is Cardapio produtoSelecionado)
             {
-                bool encontrado = false;
                 foreach (Cardapio item in Carrinho.Items)
                 {
                     if (item.Nome == produtoSelecionado.Nome)
                     {
+                        var estoqueItem = Estoque.Itens.FirstOrDefault(i => i.Nome == item.Nome);
+                        if (estoqueItem != null)
+                            estoqueItem.Quantidade++;
+
                         item.Quantidade--;
-                        item.Preco -= produtoSelecionado.Preco;
-                        encontrado = true;
 
                         if (item.Quantidade == 0)
                         {
+                            if (estoqueItem != null)
+                                estoqueItem.Quantidade += Math.Max(0, item.Quantidade);
                             Carrinho.Items.Remove(item);
                         }
                         else
@@ -112,11 +152,11 @@ namespace CANTINA_10._0
                 double somaTotal = 0;
                 foreach (Cardapio item in Carrinho.Items)
                 {
-                    somaTotal += item.Preco;
+                    somaTotal += item.Preco * item.Quantidade;
                 }
                 if (somaTotal == 0)
                 {
-                    label5.Text = "R$ 0,00";
+                    label5.Text = somaTotal == 0 ? "R$0,00" : "R$ " + somaTotal.ToString("F2");
                 }
                 else
                 {
@@ -134,7 +174,7 @@ namespace CANTINA_10._0
             double somaFinal = 0;
             foreach (Cardapio item in Carrinho.Items)
             {
-                somaFinal += item.Preco;
+                somaFinal += item.Preco * item.Quantidade;
             }
             if (Carrinho.Items.Count == 0)
             {

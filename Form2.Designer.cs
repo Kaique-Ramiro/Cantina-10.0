@@ -219,6 +219,7 @@
             Controls.Add(Cardapio);
             Font = new Font("Inter SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "XX";
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -195,6 +195,7 @@
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form3";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form3";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();

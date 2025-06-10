@@ -67,7 +67,7 @@
             button1.Name = "button1";
             button1.Size = new Size(158, 75);
             button1.TabIndex = 11;
-            button1.Text = "Acesso ao Balcão";
+            button1.Text = "Acesso a Cozinha";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -79,7 +79,7 @@
             button2.Name = "button2";
             button2.Size = new Size(158, 75);
             button2.TabIndex = 12;
-            button2.Text = "Acesso a Cozinha";
+            button2.Text = "Tela de Vendas";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -111,11 +111,11 @@
             // 
             button5.BackColor = Color.FromArgb(230, 255, 0);
             button5.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(320, 378);
+            button5.Location = new Point(314, 378);
             button5.Name = "button5";
-            button5.Size = new Size(149, 75);
+            button5.Size = new Size(155, 75);
             button5.TabIndex = 15;
-            button5.Text = "Tela de Vendas";
+            button5.Text = "Acesso ao Balcão";
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
@@ -133,6 +133,7 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Form5";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
             Load += Form5_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

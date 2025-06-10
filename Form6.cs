@@ -38,7 +38,6 @@ namespace CANTINA_10._0
                     PreparoPedidos.Instancia.Pedidos.Remove(pedidoSelecionado);
                     PedidosBalcao.Items.Remove(pedidoSelecionado);
                     ComandaBalcao.Items.Clear();
-                    HistoricoGlobal.HistoricoPedidos.Add(pedidoSelecionado);
                     HistoricoBalcao.Items.Add(pedidoSelecionado);
                 }
             }
@@ -47,14 +46,15 @@ namespace CANTINA_10._0
         private void Form6_Load(object sender, EventArgs e)
         {
             PedidosBalcao.Items.Clear();
-            if (PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
+            foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
             {
-                foreach (Cardapio item in pedidoSelecionado.Itens)
+                if(pedido.Status == "- Finalizado")
                 {
-                    ComandaBalcao.Items.Add($"{item.Nome} - Quantidade: {item.Quantidade} - {pedidoSelecionado.Tipo}");
+                    PedidosBalcao.Items.Add(pedido);
                 }
             }
         }
+        
 
         private void PedidosBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {

@@ -135,6 +135,7 @@
             Controls.Add(ComandaBalcao);
             Controls.Add(PedidosBalcao);
             Name = "Form6";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form6";
             Load += Form6_Load;
             ResumeLayout(false);

@@ -147,6 +147,7 @@
             Historico.Name = "Historico";
             Historico.Size = new Size(355, 92);
             Historico.TabIndex = 9;
+            Historico.SelectedIndexChanged += Historico_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -176,6 +177,7 @@
             Controls.Add(Preparando);
             Controls.Add(Pedidos);
             Name = "Form4";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form4";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

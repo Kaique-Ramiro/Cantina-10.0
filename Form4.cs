@@ -137,7 +137,7 @@ namespace CANTINA_10._0
         private void Pedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
             Preparando.Items.Clear();
-            if (Preparando.SelectedItem is Pedido pedidoselecionado)
+            if (Pedidos.SelectedItem is Pedido pedidoselecionado)
             {
                 foreach (Cardapio item in pedidoselecionado.Itens.Where(vaipara => vaipara.Chapa))
                 {

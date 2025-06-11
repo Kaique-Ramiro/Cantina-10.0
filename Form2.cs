@@ -211,7 +211,7 @@ namespace CANTINA_10._0
             if (resultado == DialogResult.Yes)
             {
 
-                MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question);
 
                 Pedido novoPedido = new Pedido(form3.Entrega)
                 {

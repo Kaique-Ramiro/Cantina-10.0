@@ -31,10 +31,11 @@
             pictureBox2 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
-            textBox_Usuario = new TextBox();
-            textBox_Senha = new TextBox();
+            User = new TextBox();
+            Senha = new TextBox();
             label2 = new Label();
             pictureBox1 = new PictureBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -53,50 +54,56 @@
             button1.BackColor = Color.FromArgb(243, 241, 238);
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(17, 25, 12);
-            button1.Location = new Point(220, 283);
+            button1.Location = new Point(220, 316);
             button1.Name = "button1";
             button1.Size = new Size(141, 49);
             button1.TabIndex = 3;
             button1.Text = "ENTRAR";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(243, 241, 238);
             button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(17, 25, 12);
-            button2.Location = new Point(448, 283);
+            button2.Location = new Point(448, 316);
             button2.Name = "button2";
             button2.Size = new Size(141, 49);
             button2.TabIndex = 4;
             button2.Text = "SAIR";
             button2.UseVisualStyleBackColor = false;
             // 
-            // textBox_Usuario
+            // User
             // 
-            textBox_Usuario.BackColor = Color.FromArgb(243, 241, 238);
-            textBox_Usuario.ForeColor = Color.FromArgb(124, 122, 106);
-            textBox_Usuario.Location = new Point(220, 199);
-            textBox_Usuario.Name = "textBox_Usuario";
-            textBox_Usuario.Size = new Size(369, 23);
-            textBox_Usuario.TabIndex = 5;
-            textBox_Usuario.Text = "Digite seu usuário:";
-            textBox_Usuario.TextChanged += textBox_Usuario_TextChanged;
+            User.BackColor = Color.FromArgb(243, 241, 238);
+            User.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            User.ForeColor = Color.FromArgb(124, 122, 106);
+            User.Location = new Point(220, 201);
+            User.Multiline = true;
+            User.Name = "User";
+            User.Size = new Size(369, 41);
+            User.TabIndex = 5;
+            User.Text = "Digite seu usuário:";
+            User.TextChanged += textBox_Usuario_TextChanged;
             // 
-            // textBox_Senha
+            // Senha
             // 
-            textBox_Senha.BackColor = Color.FromArgb(243, 241, 238);
-            textBox_Senha.ForeColor = Color.FromArgb(124, 122, 106);
-            textBox_Senha.Location = new Point(220, 240);
-            textBox_Senha.Name = "textBox_Senha";
-            textBox_Senha.Size = new Size(369, 23);
-            textBox_Senha.TabIndex = 6;
-            textBox_Senha.Text = "Digite sua senha:";
-            textBox_Senha.TextChanged += textBox_Senha_TextChanged;
+            Senha.BackColor = Color.FromArgb(243, 241, 238);
+            Senha.Font = new Font("Inter SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Senha.ForeColor = Color.FromArgb(124, 122, 106);
+            Senha.Location = new Point(220, 252);
+            Senha.Multiline = true;
+            Senha.Name = "Senha";
+            Senha.Size = new Size(369, 41);
+            Senha.TabIndex = 6;
+            Senha.Text = "Digite sua senha:";
+            Senha.TextChanged += textBox_Senha_TextChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.FromArgb(243, 241, 238);
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(17, 25, 12);
             label2.Location = new Point(375, 170);
@@ -115,15 +122,27 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // button3
+            // 
+            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(602, 256);
+            button3.Name = "button3";
+            button3.Size = new Size(39, 34);
+            button3.TabIndex = 9;
+            button3.Text = "👁️‍🗨️";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(17, 25, 12);
             ClientSize = new Size(787, 401);
+            Controls.Add(button3);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
-            Controls.Add(textBox_Senha);
-            Controls.Add(textBox_Usuario);
+            Controls.Add(Senha);
+            Controls.Add(User);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(pictureBox2);
@@ -141,9 +160,10 @@
         private PictureBox pictureBox2;
         private Button button1;
         private Button button2;
-        private TextBox textBox_Usuario;
-        private TextBox textBox_Senha;
+        private TextBox User;
+        private TextBox Senha;
         private Label label2;
         private PictureBox pictureBox1;
+        private Button button3;
     }
 }

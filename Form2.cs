@@ -34,7 +34,7 @@ namespace CANTINA_10._0
 
             Cardapio.BeginUpdate();
             Cardapio.Items.Clear();
-            foreach(var item in Estoque.Itens)
+            foreach(var item in Estoque.Itens.OrderBy(x=> x.ID))
             {
                 Cardapio.Items.Add(item);
             }
@@ -46,21 +46,8 @@ namespace CANTINA_10._0
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            if (Estoque.Itens.Count == 0)
-            {
-                Estoque.Itens.Add(new Cardapio("Pão de queijo", 3.50, 20, false));
-                Estoque.Itens.Add(new Cardapio("Coxinha", 5.00, 20, false));
-                Estoque.Itens.Add(new Cardapio("Pastel de Carne", 6.00, 20, true));
-                Estoque.Itens.Add(new Cardapio("Pastel de Queijo", 5.50, 20, true));
-                Estoque.Itens.Add(new Cardapio("Suco Natural (300ml)", 4.00, 20, false));
-                Estoque.Itens.Add(new Cardapio("Refrigerante Lata", 4.50, 20, false));
-                Estoque.Itens.Add(new Cardapio("Hambúrguer simples", 8.00, 20, true));
-                Estoque.Itens.Add(new Cardapio("Hambúrguer com queijo", 9.00, 20, true));
-                Estoque.Itens.Add(new Cardapio("X-Tudo", 12.00, 20, true));
-                Estoque.Itens.Add(new Cardapio("Água Mineral (500ml)", 2.50, 20, false));
-            }
             Cardapio.Items.Clear();
-            foreach(var item in Estoque.Itens)
+            foreach(var item in Estoque.Itens.OrderBy(x=> x.ID))
             {
                 Cardapio.Items.Add(item);
             }
@@ -96,7 +83,7 @@ namespace CANTINA_10._0
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID,produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Carrinho.Items.Add(novoItem);
                 }
 
@@ -218,7 +205,7 @@ namespace CANTINA_10._0
                     Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
                     NomeCliente = textBox1.Text,
                     Itens = Carrinho.Items.Cast<Cardapio>()
-                    .Select(item => new Cardapio(item.Nome, item.Preco, item.Quantidade, item.Chapa))
+                    .Select(item => new Cardapio(item.ID,item.Nome, item.Preco, item.Quantidade, item.Chapa))
                     .ToList(),
                     DataHora = DateTime.Now,
                     Tipo = form3.Entrega,

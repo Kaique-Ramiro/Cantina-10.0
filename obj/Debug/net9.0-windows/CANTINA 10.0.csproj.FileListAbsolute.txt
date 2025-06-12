@@ -42,3 +42,5 @@ C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\CANTINA 10.0.g
 C:\Users\kaiqu\Source\Repos\Cantina-10.0\obj\Debug\net9.0-windows\ref\CANTINA 10.0.dll
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form5.resources
 C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form6.resources
+C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form7.resources
+C:\Users\25163384\Documents\CANTINA 10.0\CANTINA 10.0\obj\Debug\net9.0-windows\CANTINA_10._0.Form8.resources

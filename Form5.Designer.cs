@@ -32,7 +32,6 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -83,18 +82,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(230, 255, 0);
-            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(229, 297);
-            button3.Name = "button3";
-            button3.Size = new Size(158, 75);
-            button3.TabIndex = 13;
-            button3.Text = "Administração";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(230, 255, 0);
@@ -106,14 +93,15 @@
             button4.TabIndex = 14;
             button4.Text = "Estoque";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
             button5.BackColor = Color.FromArgb(230, 255, 0);
             button5.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(314, 378);
+            button5.Location = new Point(229, 297);
             button5.Name = "button5";
-            button5.Size = new Size(155, 75);
+            button5.Size = new Size(158, 75);
             button5.TabIndex = 15;
             button5.Text = "Acesso ao Balcão";
             button5.UseVisualStyleBackColor = false;
@@ -127,7 +115,6 @@
             ClientSize = new Size(800, 458);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -147,7 +134,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
         private Button button5;
     }

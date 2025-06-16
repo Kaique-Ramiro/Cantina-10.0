@@ -47,5 +47,12 @@ namespace CANTINA_10._0
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form8 form8 = new Form8();
+            form8.Show();
+            this.Hide();
+        }
     }
 }

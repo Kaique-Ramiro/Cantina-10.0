@@ -51,7 +51,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(243, 241, 238);
+            button1.BackColor = Color.FromArgb(230, 255, 0);
             button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.FromArgb(17, 25, 12);
             button1.Location = new Point(220, 316);
@@ -64,7 +64,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(243, 241, 238);
+            button2.BackColor = Color.FromArgb(230, 255, 0);
             button2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.FromArgb(17, 25, 12);
             button2.Location = new Point(448, 316);
@@ -124,13 +124,14 @@
             // 
             // button3
             // 
-            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(602, 256);
+            button3.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(597, 258);
             button3.Name = "button3";
-            button3.Size = new Size(39, 34);
+            button3.Size = new Size(36, 29);
             button3.TabIndex = 9;
             button3.Text = "👁️‍🗨️";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 

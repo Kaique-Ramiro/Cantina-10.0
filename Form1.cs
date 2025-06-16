@@ -49,6 +49,7 @@ namespace CANTINA_10._0
             {
                 Senha.Text = "";
                 Senha.ForeColor = Color.Black;
+                Senha.PasswordChar = '*';
             }
         }
         private void textBox_Senha_Leave(object sender, EventArgs e)
@@ -57,6 +58,7 @@ namespace CANTINA_10._0
             {
                 Senha.Text = "Digite sua senha:";
                 Senha.ForeColor = Color.Gray;
+                Senha.PasswordChar = '\0';
             }
         }
 
@@ -160,5 +162,19 @@ namespace CANTINA_10._0
             }
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (Senha.Text != "Digite sua senha:")
+            {
+                if (Senha.PasswordChar == '*')
+                {
+                    Senha.PasswordChar = '\0';
+                }
+                else
+                {
+                    Senha.PasswordChar = '*';
+                }
+            }
+        }
     }
 }

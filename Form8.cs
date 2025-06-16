@@ -27,11 +27,7 @@ namespace CANTINA_10._0
 
         private void Form8_Load(object sender, EventArgs e)
         {
-            foreach (var item in Estoque.Itens)
-            {
-                
-
-            }
+            AtualizarLista();
         }
 
         private void AddItem_Click(object sender, EventArgs e)
@@ -58,6 +54,100 @@ namespace CANTINA_10._0
                 MessageBox.Show("Preço inválido. Por favor, insira um valor numérico válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
+
+        private void Remove_Click(object sender, EventArgs e)
+        {
+            if (listEstoque.SelectedItem is Cardapio pedidoSelecionado)
+            {
+                Estoque.Itens.Remove(pedidoSelecionado);
+                listEstoque.Items.Remove(pedidoSelecionado);
+            }
+        }
+
+        private void Quant_Click(object sender, EventArgs e)
+        {
+            if (listEstoque.SelectedItem is Cardapio pedidoSelecionado)
+            {
+                string novaQuantidadeStr = Microsoft.VisualBasic.Interaction.InputBox("Digite a nova quantidade:", "Alterar Quantidade", pedidoSelecionado.Quantidade.ToString());
+                if (int.TryParse(novaQuantidadeStr, out int novaQuantidade) && novaQuantidade >= 0)
+                {
+                    pedidoSelecionado.Quantidade = novaQuantidade;
+                    listEstoque.Items[listEstoque.SelectedIndex] = pedidoSelecionado;
+                }
+                else
+                {
+                    MessageBox.Show("Quantidade inválida. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum item selecionado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void EditItem_Click(object sender, EventArgs e)
+        {
+            if (listEstoque.SelectedItem != null)
+            {
+                Cardapio itemSelecionado = (Cardapio)listEstoque.SelectedItem;
+                string IDitemSTR = Microsoft.VisualBasic.Interaction.InputBox("Digite o ID do item:", "Editar Item", itemSelecionado.ID.ToString());
+                if (int.TryParse(IDitemSTR, out int IDitem) || IDitem < 0)
+                {
+                    MessageBox.Show("ID inválido. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string novoNome = Microsoft.VisualBasic.Interaction.InputBox("Digite o novo nome do item:", "Editar Item", itemSelecionado.Nome);
+                if (string.IsNullOrWhiteSpace(novoNome))
+                {
+                    MessageBox.Show("Nome do item não pode ser vazio.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string novaQuantidadeStr = Microsoft.VisualBasic.Interaction.InputBox("Digite a nova quantidade:", "Editar Item", itemSelecionado.Quantidade.ToString());
+                if (!int.TryParse(novaQuantidadeStr, out int novaQuantidade) || novaQuantidade < 0)
+                {
+                    MessageBox.Show("Quantidade inválida. Por favor, insira um número válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string novoPrecoStr = Microsoft.VisualBasic.Interaction.InputBox("Digite o novo preço:", "Editar Item", itemSelecionado.Preco.ToString("F2"));
+                if (!double.TryParse(novoPrecoStr, out double novoPreco) || novoPreco < 0)
+                {
+                    MessageBox.Show("Preço inválido. Por favor, insira um valor numérico válido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                bool novaChapa = itemSelecionado.Chapa;
+                string chapaStr = Microsoft.VisualBasic.Interaction.InputBox("O item é preparado na chapa? (Sim/Não)", "Editar Item", novaChapa ? "Sim" : "Não");
+                if (chapaStr.Equals("Sim", StringComparison.OrdinalIgnoreCase))
+                {
+                    novaChapa = true;
+                }
+                else if (chapaStr.Equals("Não", StringComparison.OrdinalIgnoreCase))
+                {
+                    novaChapa = false;
+                }
+                else
+                {
+                    MessageBox.Show("Opção inválida. Por favor, insira 'Sim' ou 'Não'.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                itemSelecionado.ID = IDitem;
+                itemSelecionado.Nome = novoNome;
+                itemSelecionado.Quantidade = novaQuantidade;
+                itemSelecionado.Preco = novoPreco;
+                itemSelecionado.Chapa = novaChapa;
+
+                listEstoque.Items[listEstoque.SelectedIndex] = itemSelecionado;
+            }
+
+            AtualizarLista();
         }
     }
 }

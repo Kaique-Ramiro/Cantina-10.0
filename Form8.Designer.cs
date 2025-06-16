@@ -69,6 +69,7 @@
             Remove.TabIndex = 2;
             Remove.Text = "Remover Item";
             Remove.UseVisualStyleBackColor = true;
+            Remove.Click += Remove_Click;
             // 
             // Quant
             // 
@@ -79,6 +80,7 @@
             Quant.TabIndex = 3;
             Quant.Text = "Alterar Quantidade";
             Quant.UseVisualStyleBackColor = true;
+            Quant.Click += Quant_Click;
             // 
             // EditItem
             // 
@@ -89,6 +91,7 @@
             EditItem.TabIndex = 4;
             EditItem.Text = "Editar Item";
             EditItem.UseVisualStyleBackColor = true;
+            EditItem.Click += EditItem_Click;
             // 
             // label1
             // 
@@ -109,6 +112,7 @@
             button1.TabIndex = 6;
             button1.Text = "↩️";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // pictureBox1
             // 
@@ -135,6 +139,7 @@
             Controls.Add(AddItem);
             Controls.Add(listEstoque);
             Name = "Form8";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form8";
             Load += Form8_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

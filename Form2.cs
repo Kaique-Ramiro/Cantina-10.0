@@ -34,24 +34,34 @@ namespace CANTINA_10._0
 
             Cardapio.BeginUpdate();
             Cardapio.Items.Clear();
-            foreach(var item in Estoque.Itens.OrderBy(x=> x.ID))
+            foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
             {
                 Cardapio.Items.Add(item);
             }
             Cardapio.EndUpdate();
 
-            if (selectedIndex >= 0 && selectedIndex < Cardapio.Items.Count) 
+            if (selectedIndex >= 0 && selectedIndex < Cardapio.Items.Count)
                 Cardapio.SelectedIndex = selectedIndex;
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            if(UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button5.Visible = true;
+                button6.Visible = false;
+            }
+            else
+            {
+                button5.Visible = false;
+                button6.Visible = true;
+            }
             Cardapio.Items.Clear();
-            foreach(var item in Estoque.Itens.OrderBy(x=> x.ID))
+            foreach (var item in Estoque.Itens.OrderBy(x => x.ID))
             {
                 Cardapio.Items.Add(item);
             }
-        } 
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -83,7 +93,7 @@ namespace CANTINA_10._0
                 }
                 if (!encontrado)
                 {
-                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID,produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
+                    Cardapio novoItem = new Cardapio(produtoSelecionado.ID, produtoSelecionado.Nome, produtoSelecionado.Preco, 1, produtoSelecionado.Chapa);
                     Carrinho.Items.Add(novoItem);
                 }
 
@@ -198,25 +208,41 @@ namespace CANTINA_10._0
             if (resultado == DialogResult.Yes)
             {
 
-                MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MessageBox.Show($"O pedido de {nomeCliente} foi realizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                var pedidosEmPreparo = Persistencia.CarregarLista<Pedido>("pedidos.json");
+                var historico = Persistencia.CarregarLista<Pedido>("historico.json");
+
+                int maiorId = 0;
+                if ( pedidosEmPreparo.Any())   
+                     maiorId = pedidosEmPreparo.Max(p => p.Id);
+                if (historico.Any())
+                    maiorId = Math.Max(maiorId, historico.Max(p => p.Id));
+
+                int novoId = maiorId + 1;
+
+
 
                 Pedido novoPedido = new Pedido(form3.Entrega)
                 {
-                    Id = PreparoPedidos.Instancia.Pedidos.Count + 1,
+                    Id = novoId,
                     NomeCliente = textBox1.Text,
                     Itens = Carrinho.Items.Cast<Cardapio>()
-                    .Select(item => new Cardapio(item.ID,item.Nome, item.Preco, item.Quantidade, item.Chapa))
+                    .Select(item => new Cardapio(item.ID, item.Nome, item.Preco, item.Quantidade, item.Chapa))
                     .ToList(),
                     DataHora = DateTime.Now,
                     Tipo = form3.Entrega,
                 };
                 PreparoPedidos.Instancia.Pedidos.Add(novoPedido);
+                Persistencia.SalvarLista(PreparoPedidos.Instancia.Pedidos, "pedidos.json");
+                Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
                 if (!novoPedido.Itens.Any(item => item.Chapa))
                 {
                     novoPedido.Status = "- Finalizado";
                     HistoricoGlobal.HistoricoPedidos.Add(novoPedido);
+                    Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "historico.json");
                 }
-                
+
                 textBox1.Clear();
                 Carrinho.Items.Clear();
                 somaFinal = 0;
@@ -224,11 +250,21 @@ namespace CANTINA_10._0
             }
             else
             {
-                DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo);
+                DialogResult resultado2 = MessageBox.Show("Deseja remover todos os itens do pedido?", "Remover Itens", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado2 == DialogResult.Yes)
                 {
+                    var itemsParaDevolver = Carrinho.Items.Cast<Cardapio>().ToList();
+
+                    foreach (Cardapio item in itemsParaDevolver)
+                    {
+                        var estoqueItem = Estoque.Itens.FirstOrDefault(i => i.Nome == item.Nome);
+                        if (estoqueItem != null)
+                            estoqueItem.Quantidade += item.Quantidade;
+                    }
+                    Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
                     textBox1.Clear();
                     Carrinho.Items.Clear();
+                    AtualizarCardapioListBox();
                     label5.Text = "R$ 0,00";
                 }
                 else
@@ -240,15 +276,33 @@ namespace CANTINA_10._0
 
         private void button4_Click(object sender, EventArgs e)
         {
+            var itensParaDevolver = Carrinho.Items.Cast<Cardapio>().ToList();
+            
+            foreach (Cardapio item in itensParaDevolver)
+            {
+                var estoqueItem = Estoque.Itens.FirstOrDefault(i => i.Nome == item.Nome);
+                if (estoqueItem != null)     
+                    estoqueItem.Quantidade += item.Quantidade;
+            }
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
             Carrinho.Items.Clear();
+            AtualizarCardapioListBox();
             label5.Text = "R$ 0, 00";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show(); 
+            this.Hide();
+
         }
     }
 }

@@ -1,0 +1,67 @@
+[
+  {
+    "Id": 1,
+    "NomeCliente": "kaka",
+    "Itens": [
+      {
+        "ID": 8,
+        "Nome": "Suco Natural (300ml)",
+        "Preco": 4,
+        "Quantidade": 1,
+        "Chapa": false
+      },
+      {
+        "ID": 6,
+        "Nome": "Pastel de Carne",
+        "Preco": 6,
+        "Quantidade": 1,
+        "Chapa": true
+      },
+      {
+        "ID": 5,
+        "Nome": "P\u00E3o de queijo",
+        "Preco": 3.5,
+        "Quantidade": 1,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-23T09:58:09.2677262-03:00",
+    "Status": "- Entregue",
+    "Tipo": " - Consumo na Loja"
+  },
+  {
+    "Id": 2,
+    "NomeCliente": "kk",
+    "Itens": [
+      {
+        "ID": 8,
+        "Nome": "Suco Natural (300ml)",
+        "Preco": 4,
+        "Quantidade": 1,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-23T09:58:57.7814509-03:00",
+    "Status": "- Entregue",
+    "Tipo": " - Consumo na Loja"
+  },
+  {
+    "Id": 3,
+    "NomeCliente": "o",
+    "Itens": [
+      {
+        "ID": 5,
+        "Nome": "P\u00E3o de queijo",
+        "Preco": 3.5,
+        "Quantidade": 1,
+        "Chapa": false
+      }
+    ],
+    "Quantidade": 0,
+    "DataHora": "2025-06-23T09:59:39.8506204-03:00",
+    "Status": "- Finalizado",
+    "Tipo": " - Consumo na Loja"
+  }
+]

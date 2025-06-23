@@ -20,16 +20,21 @@ namespace CANTINA_10._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
+            if (PedidosBalcao.SelectedItem == null)
             {
-               DialogResult resultado = MessageBox.Show("Este pedido está pronto para ser entregue?", "Entrega", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                MessageBox.Show("Selecione um pedido para entregar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (PedidosBalcao.SelectedItem is Pedido pedidoSelecionado)
+            {
+                DialogResult resultado = MessageBox.Show("Este pedido está pronto para ser entregue?", "Entrega", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                 if (resultado == DialogResult.Yes)
                 {
@@ -45,16 +50,26 @@ namespace CANTINA_10._0
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button2.Visible = true;
+                button3.Visible = false;
+            }
+            else
+            {
+                button2.Visible = false;
+                button3.Visible = true;
+            }
             PedidosBalcao.Items.Clear();
             foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
             {
-                if(pedido.Status == "- Finalizado")
+                if (pedido.Status == "- Finalizado")
                 {
                     PedidosBalcao.Items.Add(pedido);
                 }
             }
         }
-        
+
 
         private void PedidosBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -71,6 +86,13 @@ namespace CANTINA_10._0
         private void HistoricoBalcao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

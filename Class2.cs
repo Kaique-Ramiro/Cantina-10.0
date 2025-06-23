@@ -15,13 +15,15 @@ namespace CANTINA_10._0
         public DateTime DataHora { get; set; }
         public string Status { get; set; } = "";
         public string Tipo { get; set; } = "";
+
+        public Pedido() { }
         public Pedido(string Entrega)
         {
             Tipo = Entrega;
         }
         public override string ToString()
         {
-            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora}";
+            return $"Pedido #{Id} - Cliente: {NomeCliente} - {DataHora:HH:mm} {Tipo} {Status}";
         }
     }
 }

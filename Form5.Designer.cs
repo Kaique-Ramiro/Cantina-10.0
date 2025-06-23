@@ -34,6 +34,7 @@
             button2 = new Button();
             button4 = new Button();
             button5 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             // 
             pictureBox1.Image = Properties.Resources.Captura_de_tela_13_5_2025_104955_;
             pictureBox1.Location = new Point(229, 44);
+            pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(327, 119);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -53,6 +55,7 @@
             label1.Font = new Font("Inter SemiBold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(243, 241, 238);
             label1.Location = new Point(357, 175);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(70, 27);
             label1.TabIndex = 10;
@@ -63,6 +66,7 @@
             button1.BackColor = Color.FromArgb(230, 255, 0);
             button1.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.Location = new Point(229, 216);
+            button1.Margin = new Padding(4, 3, 4, 3);
             button1.Name = "button1";
             button1.Size = new Size(158, 75);
             button1.TabIndex = 11;
@@ -75,6 +79,7 @@
             button2.BackColor = Color.FromArgb(230, 255, 0);
             button2.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.Location = new Point(398, 216);
+            button2.Margin = new Padding(4, 3, 4, 3);
             button2.Name = "button2";
             button2.Size = new Size(158, 75);
             button2.TabIndex = 12;
@@ -88,6 +93,7 @@
             button4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.ForeColor = Color.FromArgb(17, 25, 12);
             button4.Location = new Point(398, 297);
+            button4.Margin = new Padding(4, 3, 4, 3);
             button4.Name = "button4";
             button4.Size = new Size(158, 75);
             button4.TabIndex = 14;
@@ -100,6 +106,7 @@
             button5.BackColor = Color.FromArgb(230, 255, 0);
             button5.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button5.Location = new Point(229, 297);
+            button5.Margin = new Padding(4, 3, 4, 3);
             button5.Name = "button5";
             button5.Size = new Size(158, 75);
             button5.TabIndex = 15;
@@ -107,18 +114,33 @@
             button5.UseVisualStyleBackColor = false;
             button5.Click += button5_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(230, 255, 0);
+            button3.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(309, 378);
+            button3.Margin = new Padding(4, 3, 4, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(158, 75);
+            button3.TabIndex = 16;
+            button3.Text = "Telão de Pedidos";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click_1;
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 25, 12);
-            ClientSize = new Size(800, 458);
+            ClientSize = new Size(799, 465);
+            Controls.Add(button3);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "Form5";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form5";
@@ -136,5 +158,6 @@
         private Button button2;
         private Button button4;
         private Button button5;
+        private Button button3;
     }
 }

@@ -27,6 +27,16 @@ namespace CANTINA_10._0
 
         private void Form8_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button1.Visible = true;
+                button2.Visible = false;
+            }
+            else
+            {
+                button1.Visible = false;
+                button2.Visible = true;
+            }
             AtualizarLista();
         }
 
@@ -58,8 +68,8 @@ namespace CANTINA_10._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
 
@@ -148,6 +158,13 @@ namespace CANTINA_10._0
             }
 
             AtualizarLista();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

@@ -37,6 +37,7 @@
             label1 = new Label();
             button1 = new Button();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -124,12 +125,24 @@
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.Location = new Point(67, 516);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 29);
+            button2.TabIndex = 8;
+            button2.Text = "↩️";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form8
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(859, 573);
+            Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -157,5 +170,6 @@
         private Label label1;
         private Button button1;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }

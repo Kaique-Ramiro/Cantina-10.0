@@ -42,6 +42,7 @@
             button4 = new Button();
             label5 = new Label();
             button5 = new Button();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(206, 469);
+            label4.Location = new Point(206, 465);
             label4.Name = "label4";
             label4.Size = new Size(61, 22);
             label4.TabIndex = 9;
@@ -160,9 +161,10 @@
             // textBox1
             // 
             textBox1.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(129, 494);
+            textBox1.Location = new Point(123, 488);
+            textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(222, 26);
+            textBox1.Size = new Size(229, 28);
             textBox1.TabIndex = 10;
             // 
             // button4
@@ -170,7 +172,7 @@
             button4.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button4.Location = new Point(837, 77);
             button4.Name = "button4";
-            button4.Size = new Size(44, 35);
+            button4.Size = new Size(41, 35);
             button4.TabIndex = 11;
             button4.Text = "🗑️";
             button4.UseVisualStyleBackColor = true;
@@ -189,13 +191,23 @@
             // button5
             // 
             button5.Font = new Font("Inter SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(12, 533);
+            button5.Location = new Point(41, 533);
             button5.Name = "button5";
-            button5.Size = new Size(59, 28);
+            button5.Size = new Size(67, 28);
             button5.TabIndex = 13;
             button5.Text = "↩️";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(41, 533);
+            button6.Name = "button6";
+            button6.Size = new Size(67, 28);
+            button6.TabIndex = 14;
+            button6.Text = "↩️";
+            button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // Form2
             // 
@@ -203,6 +215,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(890, 573);
+            Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(label5);
             Controls.Add(button4);
@@ -243,5 +256,6 @@
         private Button button4;
         private Label label5;
         private Button button5;
+        private Button button6;
     }
 }

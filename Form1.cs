@@ -1,3 +1,5 @@
+using System;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -69,6 +71,15 @@ namespace CANTINA_10._0
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists("usuarios.json"))
+                File.Delete("usuarios.json");
+            if (!System.IO.File.Exists("usuarios.json"))
+                GerarArquivoUsuarios();
+            UsuarioGlobal.Usuarios = Persistencia.CarregarLista<Usuario>("usuarios.json");
+            Estoque.Itens = Persistencia.CarregarLista<Cardapio>("estoque.json");
+            HistoricoGlobal.HistoricoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
+
+
             if (Estoque.Itens.Count == 0)
             {
                 Estoque.Itens.Add(new Cardapio(5, "Pão de queijo", 3.50, 20, false));
@@ -97,25 +108,19 @@ namespace CANTINA_10._0
                 return builder.ToString();
             }
         }
-        private static string GerarHashStatic(string senha)
+        private void GerarArquivoUsuarios()
         {
-            using (SHA256 sha256 = SHA256.Create())
+            var usuarios = new List<Usuario>()
             {
-                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(senha));
-                StringBuilder builder = new StringBuilder();
-                foreach (var b in bytes)
-                    builder.Append(b.ToString("x2"));
-                return builder.ToString();
-            }
+                new Usuario { Nome = "admin", Senha = GerarHash("admin") },
+                new Usuario { Nome = "caixa", Senha = GerarHash("vendasbolt") },
+                new Usuario { Nome = "telao", Senha = GerarHash("telaobolt") },
+                new Usuario { Nome = "cozinha", Senha = GerarHash("cozinhabolt") },
+                new Usuario { Nome = "balcao", Senha = GerarHash("balcaobolt") }
+            };
+            Persistencia.SalvarLista(usuarios, "usuarios.json");
+
         }
-        private readonly Dictionary<string, string> usuarios = new()
-        {
-            { "admin", GerarHashStatic("admin") },
-            { "caixa", GerarHashStatic("vendasbolt") },
-            { "telao", GerarHashStatic("telaobolt") },
-            { "cozinha", GerarHashStatic("cozinhabolt") },
-            { "balcao", GerarHashStatic("balcaobolt") }
-        };
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,8 +128,10 @@ namespace CANTINA_10._0
             string senhaDigitada = Senha.Text;
             string hashSenha = GerarHash(senhaDigitada);
 
-            if (usuarios.TryGetValue(usuario, out string hashSalvoUsuario) && hashSenha == hashSalvoUsuario)
+            var usuarioObj = UsuarioGlobal.Usuarios.FirstOrDefault(u => u.Nome == usuario);
+            if (usuarioObj != null && usuarioObj.Senha == hashSenha)
             {
+                UsuarioGlobal.UsuarioLogado = usuario;
                 if (usuario == "admin")
                 {
                     Form5 form5 = new Form5();
@@ -175,6 +182,22 @@ namespace CANTINA_10._0
                     Senha.PasswordChar = '*';
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("Deseja sair do serviço?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (resultado == DialogResult.Yes)
+            {
+                Close();
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Persistencia.SalvarLista(UsuarioGlobal.Usuarios, "usuarios.json");
+            Persistencia.SalvarLista(Estoque.Itens, "estoque.json");
+            Persistencia.SalvarLista(HistoricoGlobal.HistoricoPedidos, "pedidos.json");
         }
     }
 }

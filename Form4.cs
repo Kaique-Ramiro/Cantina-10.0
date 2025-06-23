@@ -20,6 +20,30 @@ namespace CANTINA_10._0
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button3.Visible = false;
+                btn__voltar.Visible = true;
+            }
+            else
+            {
+                button3.Visible = true;
+                btn__voltar.Visible = false;
+            }
+            Historico.Items.Clear();
+            var historicoPedidos = Persistencia.CarregarLista<Pedido>("historico.json");
+            if (historicoPedidos != null)
+            {
+                foreach (var pedido in historicoPedidos)
+                {
+                    if (pedido.Status == "Preparando" || pedido.Status.Contains("Finalizado"))
+                    {
+                        string historicoTexto = $"Pedido #{pedido.Id} - Cliente: {pedido.NomeCliente} - {pedido.Status.Replace("- ", "")}";
+                        if (!Historico.Items.Contains(historicoTexto))
+                            Historico.Items.Add(historicoTexto);
+                    }
+                }
+            }
             Pedidos.Items.Clear();
 
             foreach (var pedido in PreparoPedidos.Instancia.Pedidos)
@@ -27,7 +51,6 @@ namespace CANTINA_10._0
                 if (pedido.Itens.Any(item => item.Chapa))
                 {
                     Pedidos.Items.Add(pedido);
-
                 }
             }
         }
@@ -68,10 +91,10 @@ namespace CANTINA_10._0
             }
             else if (Pedidos.SelectedItem is Pedido pedidoSelecionado)
             {
-                pedidoSelecionado.Status = "Preparando";
+                pedidoSelecionado.Status = "- Preparando";
                 int idx = Pedidos.SelectedIndex;
                 Pedidos.Items[idx] = pedidoSelecionado;
-                string historicoTexto = $"Pedido # {pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} - {pedidoSelecionado.Status}";
+                string historicoTexto = $"Pedido # {pedidoSelecionado.Id} - Cliente: {pedidoSelecionado.NomeCliente} {pedidoSelecionado.Status}";
                 if (Historico.Items.Contains(historicoTexto))
                 {
                     MessageBox.Show("Este pedido já está em preparo", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -131,7 +154,7 @@ namespace CANTINA_10._0
             {
                 MessageBox.Show("Nenhum item selecionado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
         }
 
         private void Pedidos_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,9 +171,9 @@ namespace CANTINA_10._0
 
         private void btn__voltar_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
-            this.Hide();
+            Form5 form5 = new Form5();
+            form5.Show();
+            this.Close();
         }
 
         private void Preparando_SelectedIndexChanged(object sender, EventArgs e)
@@ -161,6 +184,13 @@ namespace CANTINA_10._0
         private void Historico_SelectedIndexChanged(object sender, EventArgs e)
         {
             Historico.ClearSelected();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
         }
     }
 }

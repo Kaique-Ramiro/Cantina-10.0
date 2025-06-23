@@ -38,6 +38,7 @@
             label3 = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -53,7 +54,7 @@
             // listBox2
             // 
             listBox2.FormattingEnabled = true;
-            listBox2.Location = new Point(607, 96);
+            listBox2.Location = new Point(605, 96);
             listBox2.Name = "listBox2";
             listBox2.Size = new Size(264, 400);
             listBox2.TabIndex = 1;
@@ -70,7 +71,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(35, 505);
+            button1.Location = new Point(37, 505);
             button1.Name = "button1";
             button1.Size = new Size(73, 30);
             button1.TabIndex = 3;
@@ -128,12 +129,23 @@
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            button2.Location = new Point(50, 505);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 30);
+            button2.TabIndex = 9;
+            button2.Text = "↩️";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form7
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(202, 196, 183);
             ClientSize = new Size(903, 547);
+            Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -165,5 +177,6 @@
         private Label label3;
         private Label label4;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }

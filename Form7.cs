@@ -24,13 +24,23 @@ namespace CANTINA_10._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            Form5 form5 = new Form5();
+            form5.Show();
             this.Hide();
         }
 
         private void Form7_Load(object sender, EventArgs e)
         {
+            if (UsuarioGlobal.UsuarioLogado == "admin")
+            {
+                button1.Visible = true;
+                button2.Visible = false;
+            }
+            else
+            {
+                button1.Visible = false;
+                button2.Visible = true;
+            }
             foreach (var pedido in HistoricoGlobal.HistoricoPedidos)
             {
                 if (pedido.Status == "- Finalizado")
@@ -65,6 +75,13 @@ namespace CANTINA_10._0
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             listBox1.ClearSelected();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
+            this.Hide();
         }
     }
 }

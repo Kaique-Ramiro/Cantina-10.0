@@ -1,0 +1,22 @@
+[
+  {
+    "Nome": "admin",
+    "Senha": "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"
+  },
+  {
+    "Nome": "caixa",
+    "Senha": "5240a7a3160430b0687d1c8a1b68ade2e6237bc1d047b69e152cba74f3b3c3a1"
+  },
+  {
+    "Nome": "telao",
+    "Senha": "ff446062094dd2266869f6fb0824138614f4118d6d79491f1c8e82b21d6c110b"
+  },
+  {
+    "Nome": "cozinha",
+    "Senha": "ec6bcafa1675df4fd71a36119b16a926fa7301eadce920f0868020547c8a9ae1"
+  },
+  {
+    "Nome": "balcao",
+    "Senha": "0813470928acf5df0108c2f42e2509406354456a87bac6d31c298e05d5048708"
+  }
+]

@@ -65,7 +65,7 @@
             // 
             HistoricoBalcao.Font = new Font("Inter SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             HistoricoBalcao.FormattingEnabled = true;
-            HistoricoBalcao.Location = new Point(469, 278);
+            HistoricoBalcao.Location = new Point(469, 277);
             HistoricoBalcao.Name = "HistoricoBalcao";
             HistoricoBalcao.Size = new Size(373, 142);
             HistoricoBalcao.TabIndex = 2;
